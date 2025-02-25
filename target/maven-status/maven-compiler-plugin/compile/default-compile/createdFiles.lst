@@ -1,0 +1,8 @@
+org/entdes/mail/MailConfig.class
+org/entdes/mail/EmailService.class
+org/entdes/todolist/GestorTasques.class
+org/entdes/todolist/TodolistApplication.class
+org/entdes/todolist/TodolistController.class
+org/entdes/mail/IEmailService.class
+org/entdes/todolist/Tasca.class
+org/entdes/todolist/ServletInitializer.class

@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+todolist,org.entdes.todolist,TodolistController,168,0,6,0,50,0,11,0,8,0
+todolist,org.entdes.todolist,GestorTasques,4,361,8,68,2,83,8,44,0,14
+todolist,org.entdes.todolist,TodolistApplication,8,0,0,0,3,0,2,0,2,0
+todolist,org.entdes.todolist,ServletInitializer,12,0,0,0,2,0,2,0,2,0
+todolist,org.entdes.todolist,Tasca,0,74,0,2,0,26,0,17,0,16
+todolist,org.entdes.mail,EmailService,42,0,4,0,13,0,4,0,2,0
+todolist,org.entdes.mail,MailConfig,44,0,0,0,10,0,2,0,2,0

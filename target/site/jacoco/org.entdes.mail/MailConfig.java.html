@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ca"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MailConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">todolist</a> &gt; <a href="index.source.html" class="el_package">org.entdes.mail</a> &gt; <span class="el_source">MailConfig.java</span></div><h1>MailConfig.java</h1><pre class="source lang-java linenums">package org.entdes.mail;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+
+import java.util.Properties;
+
+@Configuration
+<span class="nc" id="L11">public class MailConfig {</span>
+
+    @Value(&quot;${spring.mail.host}&quot;)
+    private String host;
+
+    @Value(&quot;${spring.mail.port}&quot;)
+    private int port;
+
+    @Value(&quot;${spring.mail.properties.mail.transport.protocol}&quot;)
+    private String protocol;
+
+    @Value(&quot;${spring.mail.properties.mail.smtp.auth}&quot;)
+    private String smtpAuth;
+
+    @Value(&quot;${spring.mail.properties.mail.smtp.starttls.enable}&quot;)
+    private String starttls;
+
+    @Value(&quot;${spring.mail.properties.mail.debug}&quot;)
+    private String debug;
+
+    @Bean
+    public JavaMailSender javaMailSender() {
+<span class="nc" id="L33">        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();</span>
+<span class="nc" id="L34">        mailSender.setHost(this.host);</span>
+<span class="nc" id="L35">        mailSender.setPort(this.port);</span>
+
+<span class="nc" id="L37">        Properties props = mailSender.getJavaMailProperties();</span>
+<span class="nc" id="L38">        props.put(&quot;mail.transport.protocol&quot;, this.protocol);</span>
+<span class="nc" id="L39">        props.put(&quot;mail.smtp.auth&quot;, this.smtpAuth);</span>
+<span class="nc" id="L40">        props.put(&quot;mail.smtp.starttls.enable&quot;, this.starttls);</span>
+<span class="nc" id="L41">        props.put(&quot;mail.debug&quot;, this.debug);</span>
+
+<span class="nc" id="L43">        return mailSender;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
